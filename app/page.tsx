@@ -74,9 +74,9 @@ export default function Home() {
       </div>
 
       {/* Features */}
-      <MaxWidthWrapper>
+      {/* <MaxWidthWrapper>
         
-      </MaxWidthWrapper>
+      </MaxWidthWrapper> */}
 
       <Footer />
     </>
