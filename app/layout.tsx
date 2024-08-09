@@ -6,7 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "PersonalPT | AI Personal Trainer",
-  description: "PersonalPT is the first AI physical therapist that helps you with your exercises in realtime",
+  description: "PersonalPT is the an AI trainer that helps you with your exercises in real time",
 };
 
 export default function RootLayout({
