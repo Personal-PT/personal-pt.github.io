@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Convo | Language Learning",
-  description: "Speech focused language learning",
+  title: "PersonalPT | AI Personal Trainer",
+  description: "PersonalPT is the first AI physical therapist that helps you with your exercises in realtime",
 };
 
 export default function RootLayout({
