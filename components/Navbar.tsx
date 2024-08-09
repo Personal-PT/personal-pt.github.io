@@ -7,6 +7,7 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { buttonVariants } from "@/components/ui/button";
 import { MobileNav } from "@/components/MobileNav";
 import { FaGithub, FaRunning } from "react-icons/fa";
+import { LINKS } from "@/constants/constants";
 
 const Navbar = () => {
   // Replace with your auth of choice, e.g. Clerk: const { userId } = auth();
@@ -31,8 +32,8 @@ const Navbar = () => {
             <Link
               target="_blank"
               rel="noopener noreferrer"
-              href={"https://github.com/palmex/personalpt"}
-              className="text-black hover:text-neutral"
+              href={LINKS.github}
+              className="hover:text-neutral text-black"
             >
               <FaGithub size={30} />
             </Link>

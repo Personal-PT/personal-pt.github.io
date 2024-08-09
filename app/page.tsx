@@ -7,6 +7,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { LINKS } from "@/constants/constants";
 
 export default function Home() {
   return (
@@ -51,7 +52,7 @@ export default function Home() {
             <div className="mt-8 flow-root w-full sm:mt-16">
               <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
                 <iframe
-                  src="/demo.mp4?autoplay=1"
+                  src={`${LINKS.hostingUrl}/demo.mp4?autoplay=1`}
                   className="h-auto w-full rounded-md bg-special shadow-2xl ring-1 ring-gray-900/10"
                   style={{ aspectRatio: "16/9" }}
                   allowFullScreen
