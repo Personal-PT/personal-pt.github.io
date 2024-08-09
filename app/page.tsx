@@ -22,10 +22,13 @@ export default function Home() {
         </h1>
 
         <p className="mt-5 max-w-prose text-sm text-zinc-800 sm:text-2xl md:text-lg">
-          <span className="font-semibold">PersonalPT</span> is an AI-powered
-          platform that provides real time feedback on exercise performance by
-          comparing user movements against a machine learning model trained on
-          expert data, helping users improve their form and technique.
+          <span className="font-semibold">PersonalPT</span> is an AI-driven
+          platform designed to provide real-time feedback on exercise
+          performance by analyzing user movements using a machine learning model
+          that performs one-shot exercise repetition counting. The model is
+          trained on individual exercise demonstrations provided by physical
+          therapists, allowing for personalized and accurate assessment of form
+          and technique across a wide range of physical therapy exercises.
         </p>
       </MaxWidthWrapper>
 
