@@ -21,7 +21,7 @@ export default function Home() {
           <span className=" text-blue-500">Personal Trainer</span>
         </h1>
 
-        <p className="mt-5 max-w-prose text-sm text-zinc-800 sm:text-2xl md:text-lg">
+        <p className="mt-5 max-w-prose text-lg text-zinc-800 sm:text-xl md:text-2xl">
           <span className="font-semibold">PersonalPT</span> is an AI-driven
           platform designed to provide real-time feedback on exercise
           performance by analyzing user movements using a machine learning model
@@ -77,10 +77,10 @@ export default function Home() {
 
       {/* Paper Abstract */}
       <MaxWidthWrapper className="mt-20">
-        <h1 className="text-xl font-bold text-blue-500 md:text-3xl">
+        <h1 className="text-2xl font-bold text-blue-500 md:text-3xl">
           Paper Abstract
         </h1>
-        <p className="text-justify text-sm text-zinc-800 md:text-lg">
+        <p className="text-justify text-zinc-950 md:text-lg">
           {
             "There are thousands of physical therapy exercises that can be customized to meet the specific rehabilitative needs of individual patients. This flexibility is essential for accommodating a patient's strength, range of motion, and progression over time. However, the vast array of exercises and their potential variations present a significant challenge for current evaluation and feedback methods, which are typically limited by their reliance on a small, predefined set of exercises. A critical function for automated exercise feedback is the ability to count repetitions accurately in real-time, which is essential for improving patient outcomes during at-home physical therapy. To address this, we introduce PersonalPT, an innovative smartphone-based application that empowers physical therapists to create tailored treatment plans with just one training example. Our one-shot repetition segmentation model allows for accurate repetition counting across any exercise, customized to the unique physical capabilities and rehabilitation requirements of individual patients. Our machine learning model has demonstrated superior performance over existing repetition counting algorithms, both semi-supervised and fully supervised, across three different exercise datasets. We validate the feasibility of employing computer vision and machine learning on a smartphone platform to deliver real-time repetition counting for various exercises, thereby enhancing the quality of at-home physical therapy."
           }
@@ -89,10 +89,10 @@ export default function Home() {
 
       {/* Methods and Procedures */}
       <MaxWidthWrapper className="mt-20">
-        <h1 className="text-xl font-bold text-blue-500 md:text-3xl">
+        <h1 className="text-2xl font-bold text-blue-500 md:text-3xl">
           Methods and Procedures
         </h1>
-        <p className="text-justify text-sm text-zinc-800 md:text-lg">
+        <p className="text-justify text-zinc-950 md:text-lg">
           {
             "In developing PersonalPT, we focused on creating a system that allows physical therapists (PTs) to adapt and personalize exercise regimens based on continuous patient assessments. This personalization process involves several key steps. Initially, the PT creates a new exercise tailored to the patient's specific needs and records a video that demonstrates the correct form and technique across several repetitions. Following this, the PT manually labels the start and stop points of each repetition within the video using precise timestamps. These labeled video segments are then used to train the one-shot segmentation model, which learns to recognize the exercise pattern from just this single example. Once the model is trained, it is deployed in the PersonalPT app, allowing patients to view the instructional video and subsequently record their own attempts at the exercise. The system then uses the trained model to count repetitions in real-time, providing immediate feedback to the patient and detailed performance data to the PT. This approach not only enables accurate repetition counting but also supports the dynamic adjustment of exercise plans as patients progress in their rehabilitation."
           }
@@ -101,10 +101,10 @@ export default function Home() {
 
       {/* Training and Model Fitting */}
       <MaxWidthWrapper className="mt-20">
-        <h1 className="text-xl font-bold text-blue-500 md:text-3xl">
+        <h1 className="text-2xl font-bold text-blue-500 md:text-3xl">
           Training and Model Fitting
         </h1>
-        <p className="text-justify text-sm text-zinc-800 md:text-lg">
+        <p className="text-justify text-zinc-950 md:text-lg">
           {
             "The training and fitting of the PersonalPT model involve several processes designed to ensure accurate and efficient performance. After a physical therapist records a video of a new exercise, the video is processed to extract 3D skeletal data using Mediapipe, an advanced human pose estimation algorithm. This step yields 33 key joint positions for each frame of the video, which are used to calculate the geometries of the human body in motion. These geometries include critical angles between adjacent and non-adjacent body segments, which are relevant to physical therapy. For instance, angles like the Right Elbow Angle (between the shoulder and wrist) are crucial for exercises targeting the upper limbs. The extracted angles are smoothed and then subjected to feature selection, where a recursive feature elimination (RFE) technique is used to identify the most relevant angles for the specific exercise being modeled. This selection reduces the complexity of the model by focusing only on the angles that significantly impact the exercise's movement pattern. The selected angles are further transformed into a 2D latent space using Principal Component Analysis (PCA), which simplifies the data while retaining the essential movement characteristics. A Gaussian Mixture Model (GMM) is then fitted to this latent space, learning the distribution of Resting (State R) and Active exertion (State A) states based on the provided training example. The GMM uses this bimodal distribution to predict whether the patient is in a Resting or Active state during each frame of the exercise. By analyzing the sequence of these states, the model accurately counts repetitions in real-time, ensuring that the feedback provided to the patient and PT is both timely and precise."
           }
@@ -113,8 +113,10 @@ export default function Home() {
 
       {/* Results */}
       <MaxWidthWrapper className="mt-20">
-        <h1 className="text-xl font-bold text-blue-500 md:text-3xl">Results</h1>
-        <p className="text-justify text-sm text-zinc-800 md:text-lg">
+        <h1 className="text-2xl font-bold text-blue-500 md:text-3xl">
+          Results
+        </h1>
+        <p className="text-justify text-zinc-950 md:text-lg">
           {
             "Our extensive experiments and comparisons across three different datasets have demonstrated that the PersonalPT model significantly outperforms existing state-of-the-art models for repetitive action counting (RAC). We evaluated our model using two primary metrics: Off-by-One (OBO) accuracy, which measures the percentage of test videos where the predicted repetition count is within one of the ground truth, and Mean Absolute Error (MAE), which quantifies the average deviation between predicted and actual repetition counts. The datasets used in our evaluation include the Fit3D dataset, the RepCount dataset, and our custom Variations dataset, each presenting unique challenges and representing different physical therapy scenarios. Our model showed exceptional performance on the Variations dataset, which is most reflective of real-world, in-home physical therapy conditions, with an OBO accuracy of 81% and an MAE of 0.99. These results indicate the model's robust generalization capabilities across different exercises and patient demographics. While the model also performed well on the controlled Fit3D dataset, achieving an OBO accuracy of 72%, it faced greater challenges on the RepCount dataset due to the diversity of exercise types and camera angles. Nevertheless, even in these more difficult conditions, the PersonalPT model maintained competitive accuracy, outperforming traditional RAC models like TransRAC and Gesture-Based Dynamic Time Warping (GB-DTW). Our findings underscore the efficacy of our one-shot approach for RAC in the context of physical therapy, particularly for exercises performed in non-laboratory settings."
           }
@@ -123,10 +125,10 @@ export default function Home() {
 
       {/* Conclusion and Future Work */}
       <MaxWidthWrapper className="mt-20">
-        <h1 className="text-xl font-bold text-blue-500 md:text-3xl">
+        <h1 className="text-2xl font-bold text-blue-500 md:text-3xl">
           Conclusion and Future Work
         </h1>
-        <p className="text-justify text-sm text-zinc-800 md:text-lg">
+        <p className="text-justify text-zinc-950 md:text-lg">
           {
             "PersonalPT represents a significant advancement in the field of automated exercise evaluation, particularly for physical therapy applications. Our one-shot repetition counting model, designed to be trained on a single example, provides a scalable and flexible solution that can be tailored to the specific needs of individual patients. The model's ability to run in real-time on mobile devices makes it accessible and practical for at-home use, where patients can receive immediate feedback on their exercise performance. This capability is crucial for improving patient adherence to prescribed exercise regimens, thereby enhancing rehabilitation outcomes. However, while our current model demonstrates strong performance, there are several avenues for future research and development. One key area for improvement is the enhancement of 3D human pose estimation models, which are foundational to the accuracy of our approach. Future versions of PersonalPT could also incorporate automated video trimming to eliminate the need for manual intervention by PTs, further streamlining the workflow. Additionally, expanding the model's applicability to a broader range of exercises and testing it on more diverse subject populations, including those with varying body types and physical abilities, will be essential for ensuring its robustness and generalizability. Finally, integrating features that detect the start and end of exercises autonomously will make the system even more user-friendly and effective in real-world settings. As we continue to refine and expand, we aim to provide a comprehensive tool that supports both patients and physical therapists in achieving optimal rehabilitation outcomes."
           }
