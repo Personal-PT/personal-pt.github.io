@@ -1,22 +1,29 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+
+import { cn } from "@/lib/utils";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "PersonalPT",
-  description: "PersonalPT: Your AI physical therapist",
+  title: "Convo | Language Learning",
+  description: "Speech focused language learning",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="light">
+      <body
+        className={cn(
+          "grainy flex min-h-screen flex-col font-sans antialiased",
+          GeistSans.className,
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }
